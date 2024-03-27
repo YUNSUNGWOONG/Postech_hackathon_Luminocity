@@ -6,8 +6,6 @@ import react from "@vitejs/plugin-react";
 export default ({ mode }) => {
   // eslint-disable-next-line no-undef
   const env = loadEnv(mode, process.cwd());
-  console.log('env');
-  console.log(env);
   return {
     plugins: [
       react(),
@@ -20,5 +18,8 @@ export default ({ mode }) => {
         },
       }),
     ],
+    build: {
+      outDir: "build",
+    },
   };
 };
